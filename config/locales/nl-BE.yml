@@ -1,0 +1,5 @@
+---
+nl-BE:
+  fixed_quantity:
+    base_quantity: Basis veelvoud
+    is_not_a_multiple_of_base: Is geen veelvoud van {{base}}

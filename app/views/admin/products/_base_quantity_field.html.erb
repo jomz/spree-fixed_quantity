@@ -1,0 +1,5 @@
+<% f.field_container :base_quantity do %>
+  <%= f.label :base_quantity, t("fixed_quantity.base_quantity")%> <br />
+  <%= f.text_field :base_quantity, :value => @product.base_quantity %>
+  <%= f.error_message_on :base_quantity %>
+<% end %>

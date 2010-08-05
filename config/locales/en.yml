@@ -1,0 +1,5 @@
+---
+en:
+  fixed_quantity:
+    base_quantity: Base quantity
+    is_not_a_multiple_of_base: Is not a multiple of {{base}}
