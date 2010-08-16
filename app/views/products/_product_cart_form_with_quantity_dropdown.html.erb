@@ -33,8 +33,13 @@
   </div>
 <% end%>
 <% if @product.has_stock? || Spree::Config[:allow_backorders] %>
-  <% select_options = (0..10).map{|n| n * @product.base_quantity } %>
-  <%= select_tag ((@product.has_variants? ? :quantity : "variants[#{@product.master.id}]"), options_for_select(select_options)) %>
+  <% if @product.base_quantity.to_i > 1 %>
+    <% select_options = (0..10).map{|n| n * @product.base_quantity } %>
+    <%= select_tag ((@product.has_variants? ? :quantity : "variants[#{@product.master.id}]"), options_for_select(select_options)) %>
+  <% else %>
+    <%= text_field_tag (@product.has_variants? ? :quantity : "variants[#{@product.master.id}]"),
+      1, :class => "title", :size => 3 %>
+  <% end %>
   &nbsp;
   <button type='submit' class='large primary'>
     <%= image_tag('/images/add-to-cart.png') + t('add_to_cart') %>
