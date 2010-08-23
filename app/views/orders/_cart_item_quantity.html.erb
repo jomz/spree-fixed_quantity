@@ -1,4 +1,4 @@
-<% if variant.product.base_quantity.to_i > 1 %>
+<% if variant.product.base_quantity.to_i > 1
   select_options = (0..10).map{|n| n * variant.product.base_quantity } %>
   <%= item_form.select :quantity, select_options %>
 <% else %>
