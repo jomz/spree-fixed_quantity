@@ -1,5 +1,5 @@
 <% if variant.product.base_quantity.to_i > 1
-  select_options = (0..10).map{|n| n * variant.product.base_quantity } %>
+  select_options = (1..10).map{|n| n * variant.product.base_quantity } %>
   <%= item_form.select :quantity, select_options %>
 <% else %>
   <%= item_form.text_field :quantity, :size => 3 %>
